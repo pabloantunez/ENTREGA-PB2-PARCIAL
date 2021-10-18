@@ -2,7 +2,6 @@
 *.class
 bin/
 .classpath
-.project
 .settings/
 # Log file
 *.log
