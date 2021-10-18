@@ -9,9 +9,9 @@ public class PeliculaTest {
 
 	@Test
 	public void sePudoCrearUnaPelicula() {
-		String nombre, dia, horario;
-		TipoGenero genero;
-		TipoClasificacion clasificacion;
+		String nombre = "Rambo";
+		TipoGenero genero = TipoGenero.ACCION;
+		TipoClasificacion clasificacion = TipoClasificacion.MAYORES_16;
 		TipoSala sala;
 
 		Pelicula pelicula = new Pelicula(nombre, genero, clasificacion);
