@@ -12,8 +12,6 @@ public class PeliculaTest {
 		String nombre = "Rambo";
 		TipoGenero genero = TipoGenero.ACCION;
 		TipoClasificacion clasificacion = TipoClasificacion.MAYORES_16;
-		TipoSala sala;
-
 		Pelicula pelicula = new Pelicula(nombre, genero, clasificacion);
 		assertNotNull(pelicula);
 	}
