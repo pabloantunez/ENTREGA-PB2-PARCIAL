@@ -5,13 +5,23 @@ public class Sala {
 	private String nombre;
 	Boolean estadoLimpia, salaDisponible;
 	TipoSala tipoDeSala;
+	private final Integer CANTIDAD_DE_FILAS = 25, CANTIDAD_DE_COLUMNAS =18;
+	private Integer [][] asiento;
 
 	public Sala(String nombre, TipoSala tipoDeSala) {
 		this.nombre = nombre;
 		this.tipoDeSala = tipoDeSala;
 		this.salaDisponible = true;
 		this.estadoLimpia = true;
+		this.asiento = new Integer [CANTIDAD_DE_FILAS][CANTIDAD_DE_COLUMNAS];
+	}
 
+	public Integer[][] getAsiento() {
+		return asiento;
+	}
+
+	public void setAsiento(Integer[][] asiento) {
+		this.asiento = asiento;
 	}
 
 	public Boolean getSalaDisponible() {
@@ -56,4 +66,6 @@ public class Sala {
 		}
 		return true;
 	}
+	
+	
 }
