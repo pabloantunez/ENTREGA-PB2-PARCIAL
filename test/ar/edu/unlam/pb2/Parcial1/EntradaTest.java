@@ -6,10 +6,6 @@ import org.junit.Test;
 
 public class EntradaTest {
 
-	/*
-	 * - Testear si es sala 3d, 2d, etc - Descuento del dia
-	 */
-
 	@Test
 	public void sePuedeCrearLaClaseEntrada() {
 		Double precio = 100.0, hora = 14.00;
