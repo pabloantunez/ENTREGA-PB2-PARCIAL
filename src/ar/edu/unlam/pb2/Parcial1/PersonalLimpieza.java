@@ -10,8 +10,17 @@ public class PersonalLimpieza extends PersonalCine {
 		this.sala = new Sala ("Sala1", TipoSala.SALA_2D);
 	}
 	
+	
+	@Override
 	public Boolean limpiarSala() {
 		sala.setEstadoLimpia(true);
 		return sala.getEstadoLimpia();
 	}
+	
+	/*public Boolean limpiarSala() {
+		sala.setEstadoLimpia(true);
+		return sala.getEstadoLimpia();
+	}*/
+	
+	
 }
