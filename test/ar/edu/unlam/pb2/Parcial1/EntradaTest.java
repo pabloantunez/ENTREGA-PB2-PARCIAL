@@ -6,17 +6,13 @@ import org.junit.Test;
 
 public class EntradaTest {
 
-	/*
-	 * - Testear si es sala 3d, 2d, etc - Descuento del dia
-	 */
-
 	@Test
 	public void sePuedeCrearLaClaseEntrada() {
-		Double precio = 100.0, hora = 14.00;
+		Double precio = 100.0;
 		Integer fila = 20, butaca = 10;
-		String dia = "jueves";
+		String dia = "jueves", hora = "14:00";
 		// meter por marametros la sala y la pelicula;
-		Pelicula pelicula = new Pelicula("Harry Potter", TipoGenero.FICCION, TipoClasificacion.ATP, "Lunes", "14:00", TipoSala.SALA_2D);
+		Pelicula pelicula = new Pelicula("Harry Potter", TipoGenero.FICCION, TipoClasificacion.ATP);
 
 		Sala sala = new Sala("2", TipoSala.SALA_3D);
 
@@ -27,11 +23,11 @@ public class EntradaTest {
 
 	@Test
 	public void sePuedeSaberLaDisponibilidadDeLaButacaYEstaEstaLibre() {
-		Double precio = 100.0, hora = 14.00;
+		Double precio = 100.0;
 		Integer fila = 20, butaca = 10;
-		String dia = "jueves";
+		String dia = "jueves", hora = "14:00";
 
-		Pelicula pelicula = new Pelicula("Harry Potter", TipoGenero.FICCION, TipoClasificacion.ATP, "Lunes", "14:00", TipoSala.SALA_2D);
+		Pelicula pelicula = new Pelicula("Harry Potter", TipoGenero.FICCION, TipoClasificacion.ATP);
 
 
 		Sala sala = new Sala("2", TipoSala.SALA_3D);
@@ -50,11 +46,11 @@ public class EntradaTest {
 	public void poderReservarUnaButaca() {
 		// � asignar
 
-		Double precio = 100.0, hora = 14.00;
+		Double precio = 100.0;
 		Integer fila = 20, butaca = 10;
-		String dia = "jueves";
+		String dia = "jueves", hora = "14:00";
 
-		Pelicula pelicula = new Pelicula("Harry Potter", TipoGenero.FICCION, TipoClasificacion.ATP, "Lunes", "14:00", TipoSala.SALA_2D);
+		Pelicula pelicula = new Pelicula("Harry Potter", TipoGenero.FICCION, TipoClasificacion.ATP);
 
 
 		Sala sala = new Sala("2", TipoSala.SALA_3D);
@@ -71,11 +67,11 @@ public class EntradaTest {
 	@Test
 	public void noPoderReservarButacaPorqueEstaOcupada() {
 
-		Double precio = 100.0, hora = 14.00;
+		Double precio = 100.0;
 		Integer fila = 20, butaca = 10;
-		String dia = "jueves";
+		String dia = "jueves", hora = "14:00";
 
-		Pelicula pelicula = new Pelicula("Harry Potter", TipoGenero.FICCION, TipoClasificacion.ATP, "Lunes", "14:00", TipoSala.SALA_2D);
+		Pelicula pelicula = new Pelicula("Harry Potter", TipoGenero.FICCION, TipoClasificacion.ATP);
 
 		Sala sala = new Sala("2", TipoSala.SALA_3D);
 
@@ -93,11 +89,11 @@ public class EntradaTest {
 
 	@Test
 	public void poderSaberQuePeliculaVoyAVerEnLaEntrada() {
-		Double precio = 100.0, hora = 14.00;
+		Double precio = 100.0;
 		Integer fila = 20, butaca = 10;
-		String dia = "jueves";
+		String dia = "jueves", hora = "14:00";
 
-		Pelicula pelicula = new Pelicula("Harry Potter", TipoGenero.FICCION, TipoClasificacion.ATP, "Lunes", "14:00", TipoSala.SALA_2D);
+		Pelicula pelicula = new Pelicula("Harry Potter", TipoGenero.FICCION, TipoClasificacion.ATP);
 
 
 		Sala sala = new Sala("2", TipoSala.SALA_3D);
@@ -115,11 +111,11 @@ public class EntradaTest {
 
 	@Test
 	public void poderSaberLaSalaEnDondeVoyAVerMiPelicula() {
-		Double precio = 100.0, hora = 14.00;
+		Double precio = 100.0;
 		Integer fila = 20, butaca = 10;
-		String dia = "jueves";
+		String dia = "jueves", hora = "14:00";
 
-		Pelicula pelicula = new Pelicula("Harry Potter", TipoGenero.FICCION, TipoClasificacion.ATP, "Lunes", "14:00", TipoSala.SALA_2D);
+		Pelicula pelicula = new Pelicula("Harry Potter", TipoGenero.FICCION, TipoClasificacion.ATP);
 
 		Sala sala = new Sala("2", TipoSala.SALA_3D);
 
@@ -135,11 +131,11 @@ public class EntradaTest {
 	@Test
 	public void poderSaberEnQueTipoDeSalaEstaMiEntrada() {
 
-		Double precio = 100.0, hora = 14.00;
+		Double precio = 100.0;
 		Integer fila = 20, butaca = 10;
-		String dia = "jueves";
+		String dia = "jueves", hora = "14:00";
 
-		Pelicula pelicula = new Pelicula("Harry Potter", TipoGenero.FICCION, TipoClasificacion.ATP, "Lunes", "14:00", TipoSala.SALA_2D);
+		Pelicula pelicula = new Pelicula("Harry Potter", TipoGenero.FICCION, TipoClasificacion.ATP);
 
 
 		Sala sala = new Sala("2", TipoSala.SALA_3D);
@@ -152,5 +148,6 @@ public class EntradaTest {
 
 		assertEquals(valorEsperado, valorObtenido);
 	}
+
 
 }

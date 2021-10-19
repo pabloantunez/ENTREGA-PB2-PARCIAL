@@ -4,16 +4,14 @@ public class Entrada {
 	private final Integer CANTIDAD_FILAS = 25;
 	private final Integer CANTIDAD_BUTACAS_POR_FILA = 18;
 	private Double precio;
-	private Boolean[][] asientos;
-	private Double hora;
-	private String dia;
+	private String hora;
+	private String dia;	
 	
 	private Pelicula pelicula;
 	private Sala sala;
 
-	public Entrada(Double precio, Double hora, String dia, Pelicula pelicula, Sala sala) {
+	public Entrada(Double precio, String hora, String dia, Pelicula pelicula, Sala sala) {
 		this.precio = precio;
-		this.asientos = new Boolean[CANTIDAD_FILAS][CANTIDAD_BUTACAS_POR_FILA];
 		this.hora = hora;
 		this.dia = dia;
 		this.pelicula = pelicula;
@@ -23,7 +21,7 @@ public class Entrada {
 	public Boolean estadoButaca(Integer fila, Integer butaca) {
 		// false = ocupado
 		Boolean estadoDeLaButaca = false;
-		if (asientos[fila][butaca] == null || asientos[fila][butaca] == false) {
+		if (sala.getAsiento()[fila][butaca] == null || sala.getAsiento()[fila][butaca] == false) {
 			estadoDeLaButaca = true;
 		}
 		return estadoDeLaButaca;
@@ -32,7 +30,7 @@ public class Entrada {
 	public Boolean asignarAsiento(Integer fila, Integer butaca) {
 		Boolean estadoDeAsignacion = false;
 		if (estadoButaca(fila, butaca)) {
-			asientos[fila][butaca] = true;
+			sala.getAsiento()[fila][butaca] = true;
 			estadoDeAsignacion = true;
 		}
 
@@ -50,4 +48,22 @@ public class Entrada {
 	public TipoSala getTipoSala() {
 		return sala.getTipoDeSala();
 	}
+
+	public String getHora() {
+		return hora;
+	}
+
+	public void setHora(String hora) {
+		this.hora = hora;
+	}
+
+	public String getDia() {
+		return dia;
+	}
+
+	public void setDia(String dia) {
+		this.dia = dia;
+	}
+	
+	
 }

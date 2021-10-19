@@ -48,22 +48,39 @@ public class PersonaTest {
 	
 	@Test
 	public void sePudoCrearEmpleadoLimpiezaDelCine() {
-		PersonalLimpieza empleado2 = new PersonalLimpieza("Gerardo", "Bolañoz", 500, 49);
+		Persona empleado2 = new PersonalLimpieza("Gerardo", "Bolañoz", 500, 49);
 		assertNotNull(empleado2);
 	}
 	
 	
 	@Test
-	public void elPersonaldeLimpiezaLimpiaLaSala() {
-		PersonalLimpieza empleado2 = new PersonalLimpieza("Luis", "Gómez", 600, 43);
+	public void elPersonalDeLimpiezaLimpiaLaSala() {
+		PersonalCine empleado2 = new PersonalLimpieza("Luis", "Gómez", 600, 43);
 		Boolean valorEsperado = true;
 		Boolean valorObtenido = empleado2.limpiarSala();
 		assertEquals(valorEsperado, valorObtenido);
 	}
 	
+	/*@Test*/
+	/*public void elPersonaldeLimpiezaLimpiaLaSala() {
+		PersonalLimpieza empleado2 = new PersonalLimpieza("Luis", "Gómez", 600, 43);
+		Boolean valorEsperado = true;
+		Boolean valorObtenido = empleado2.limpiarSala();
+		assertEquals(valorEsperado, valorObtenido);
+	}*/
+	
 	@Test
-	public void elPersonalDeFrontDeskValidaSiLaSalaEstaDisponible() {
-		PersonalFront empleado1 = new PersonalFront("Luis", "Gómez", 600, 43);
+	public void elPersonalDeFrontDeskVendeEntrada() {
+		PersonalCine empleado1 = new PersonalFront("Luis", "Gómez", 600, 43);
+		Boolean valorEsperado = true;
+		Boolean valorObtenido = empleado1.venderEntrada();
+		assertEquals(valorEsperado, valorObtenido);
+	}
+	
+	
+	@Test
+	public void elPersonalDeFrontDeskValidaQueLaSalaEstaDisponible() {
+		PersonalCine empleado1 = new PersonalFront("Luis", "Gómez", 600, 43);
 		Boolean valorEsperado = true;
 		Sala sala = new Sala ("Sala2", TipoSala.SALA_3D);
 		Boolean valorObtenido = sala.getSalaDisponible();
@@ -71,11 +88,27 @@ public class PersonaTest {
 	}
 	
 	@Test
+	public void elPersonalDeFrontDeskAsignaUnaSalaAUnaPelicula() {
+		PersonalCine empleado1 = new PersonalFront("Luis", "Gómez", 600, 43);
+		Pelicula pelicula = new Pelicula("Rambo", TipoGenero.ACCION, TipoClasificacion.MAYORES_16);
+		Sala sala1 = new Sala ("Sala 1", TipoSala.SALA_2D);
+		
+		sala1.setSalaDisponible(false);
+		Boolean valorEsperado = false;
+		Boolean valorObtenido = sala1.getSalaDisponible();
+		assertEquals(valorEsperado, valorObtenido);
+	}
+
+	
+	
+/*	@Test
 	public void elPersonalDeFrontDeskValidaSiLaSalaEstaDisponiblePeroEstaConUnaFuncionEnCurso() {
-		PersonalFront empleado1 = new PersonalFront("Luis", "Gómez", 600, 43);
+		PersonalCine empleado1 = new PersonalFront("Luis", "Gómez", 600, 43);
+		Pelicula pelicula = new Pelicula("Rambo", TipoGenero.ACCION, TipoClasificacion.MAYORES_16);
 		Boolean valorEsperado = false;
 		
-	}
+		
+	}*/
 	
 	
 }
