@@ -38,7 +38,14 @@ public class CinemaTest {
 
 	@Test
 	public void elClienteMenorDeEdadNoPuedeComprarEntradaParaPeliculaNoATP() {
-
+		String nombre = "Showcase";
+		Integer cantidadPersonas = 10, cantidadSalas = 3, cantidadPeliculas = 3;
+		Cine cine = new Cine("ShowCase", cantidadPersonas, cantidadSalas, cantidadPeliculas);
+		Cliente cliente = new Cliente("Juan", "Gonzalez", 18908287, 13, TipoCliente.STANDARD, false);
+		Pelicula pelicula = new Pelicula("Rambo", TipoGenero.ACCION, TipoClasificacion.MAYORES_16);
+		Boolean valorEsperado = false;
+		Boolean valorObtenido = cine.comprarEntrada(cliente, pelicula);
+		assertEquals(valorEsperado,valorObtenido);	
 	}
 
 	@Test
@@ -55,9 +62,25 @@ public class CinemaTest {
 
 	@Test
 	public void elMiercolesHayDescuento() {
-
+		String nombre = "Showcase", dia = "Miercoles";
+		Integer cantidadPersonas = 10, cantidadSalas = 3, cantidadPeliculas = 3;
+		Cine cine = new Cine("ShowCase", cantidadPersonas, cantidadSalas, cantidadPeliculas);
+		Boolean valorEsperado = true;
+		Boolean valorObtenido = cine.evaluarSiHayDescuento(dia);
+		assertEquals (valorEsperado, valorObtenido);
 	}
 
+	@Test
+	public void elJuevesLaEntradaSaleMasCaraPorSerDiaDeEstreno() { 
+		String nombre = "Showcase", dia = "Jueves";
+		Double valorEntrada = 100.0;
+		Integer cantidadPersonas = 10, cantidadSalas = 3, cantidadPeliculas = 3;
+		Cine cine = new Cine("ShowCase", cantidadPersonas, cantidadSalas, cantidadPeliculas);
+		Double valorEsperado = 110.0;
+		Double valorObtenido = cine.incrementarElValorDeEntrada(valorEntrada,dia);
+		assertEquals (valorEsperado, valorObtenido);
+	}
+	
 	@Test
 	public void sePuedeAgregarSalas() {
 		Cine cine = new Cine("ShowCase", 10, 3, 3);
