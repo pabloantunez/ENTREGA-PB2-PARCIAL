@@ -54,5 +54,28 @@ public class Cine {
 		}
 		return sePudoAgregar;
 	}
+	
+	public Boolean evaluarCondicionCliente(Cliente cliente) {
+		Boolean resultado = false;
+		
+		if (cliente.getTipoDeCliente().equals(TipoCliente.VIP) && (cliente.getMensualidadActiva() == true)) {
+			resultado = true;
+			return resultado;
+		}
+		return resultado;
+	}
+
+	public Double aplicarDto(Double valorEntrada, Cliente cliente1) {
+		
+		Double precioConDto = 0.0;
+		
+		if (evaluarCondicionCliente(cliente1)==true) {
+			precioConDto = valorEntrada * 0.9;
+			return precioConDto;
+		}
+		return valorEntrada;
+	}
+
+	
 
 }
