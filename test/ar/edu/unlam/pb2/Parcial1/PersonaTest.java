@@ -79,7 +79,7 @@ public class PersonaTest {
 	
 	
 	@Test
-	public void elPersonalDeFrontDeskValidaSiLaSalaEstaDisponible() {
+	public void elPersonalDeFrontDeskValidaQueLaSalaEstaDisponible() {
 		PersonalCine empleado1 = new PersonalFront("Luis", "Gómez", 600, 43);
 		Boolean valorEsperado = true;
 		Sala sala = new Sala ("Sala2", TipoSala.SALA_3D);
