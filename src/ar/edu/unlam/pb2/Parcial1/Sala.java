@@ -6,21 +6,21 @@ public class Sala {
 	Boolean estadoLimpia, salaDisponible;
 	TipoSala tipoDeSala;
 	private final Integer CANTIDAD_DE_FILAS = 25, CANTIDAD_DE_COLUMNAS =18;
-	private Integer [][] asiento;
+	private Boolean [][] asiento;
 
 	public Sala(String nombre, TipoSala tipoDeSala) {
 		this.nombre = nombre;
 		this.tipoDeSala = tipoDeSala;
 		this.salaDisponible = true;
 		this.estadoLimpia = true;
-		this.asiento = new Integer [CANTIDAD_DE_FILAS][CANTIDAD_DE_COLUMNAS];
+		this.asiento = new Boolean [CANTIDAD_DE_FILAS][CANTIDAD_DE_COLUMNAS];
 	}
 
-	public Integer[][] getAsiento() {
+	public Boolean[][] getAsiento() {
 		return asiento;
 	}
 
-	public void setAsiento(Integer[][] asiento) {
+	public void setAsiento(Boolean[][] asiento) {
 		this.asiento = asiento;
 	}
 
@@ -59,7 +59,7 @@ public class Sala {
 	public Boolean disponibilidadDeLaSala(TipoSala tipoDeSala, String horario, String dia, Pelicula pelicula) {
 		Boolean estaDisponible = false;
 		if (tipoDeSala.equals(pelicula.getSala()) && pelicula.getDia().equals(dia)
-				&& pelicula.getHorario().equals(horario) || estadoLimpia == false) {
+				&& pelicula.getHora().equals(horario) || estadoLimpia == false) {
 			salaDisponible = false;
 			estadoLimpia = false;
 			return false;
