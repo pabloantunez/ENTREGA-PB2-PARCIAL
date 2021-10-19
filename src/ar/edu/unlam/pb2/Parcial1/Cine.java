@@ -76,6 +76,40 @@ public class Cine {
 		return valorEntrada;
 	}
 
+	public Boolean evaluarSiHayDescuento(String dia) {
+		Boolean hayDescuento = false;
+		for (int i = 0; i < dias.length; i++) {
+			if (dias[i].equals(dia)) {
+				hayDescuento = true;
+				return hayDescuento;
+			}
+		}
+		return hayDescuento;
+	}
+
+	public Double incrementarElValorDeEntrada(Double valorEntrada, String dia) {
+		Double valorIncrementadoEntrada = 0.0;
+		for (int i = 0; i < dias.length; i++) {
+			if (dias[i].equals(dia)) {
+				return valorIncrementadoEntrada = valorEntrada + (valorEntrada * 0.1);
+			}
+		}
+		return valorEntrada;
+	}
+
+	public Boolean comprarEntrada(Cliente cliente, Pelicula pelicula) {
+		Boolean sePudoComprar = false;
+		if (pelicula.getClasificacion().equals(TipoClasificacion.MAYORES_16)) {
+			if (cliente.getEdad() >= 16) {
+				sePudoComprar = true;
+				return sePudoComprar;
+			} else {
+				return sePudoComprar;
+			}
+		}
+		sePudoComprar = true;
+		return sePudoComprar;
+	}
 	
 
 }
