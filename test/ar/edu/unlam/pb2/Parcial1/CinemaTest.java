@@ -14,12 +14,12 @@ public class CinemaTest {
 	}
 
 	@Test
-	public void sePuedeAgregarPersonalAlCine() {
+	public void sePuedeAgregarPersonalAlCine() { // TOMI
 
 	}
 
 	@Test
-	public void elClienteVipTieneDescuento() {
+	public void elClienteVipTieneDescuento() { // VIR
 
 	}
 
@@ -29,7 +29,7 @@ public class CinemaTest {
 	}
 
 	@Test
-	public void elClienteMenorDeEdadNoPuedeComprarEntradaParaPeliculaNoATP() {
+	public void elClienteMenorDeEdadNoPuedeComprarEntradaParaPeliculaNoATP() { // PABLO
 
 	}
 
@@ -39,8 +39,24 @@ public class CinemaTest {
 	}
 
 	@Test
-	public void elMiercolesHayDescuento() {
-
+	public void elMiercolesHayDescuento() { // PABLO
+		String nombre = "Showcase", dia = "Miercoles";
+		Integer cantidadPersonas = 10, cantidadSalas = 3, cantidadPeliculas = 3;
+		Cine cine = new Cine("ShowCase", cantidadPersonas, cantidadSalas, cantidadPeliculas);
+		Boolean valorEsperado = true;
+		Boolean valorObtenido = cine.evaluarSiHayDescuento(dia);
+		assertEquals (valorEsperado, valorObtenido);
+	}
+	
+	@Test
+	public void elJuevesLaEntradaSaleMasCaraPorSerDiaDeEstreno() { // PABLO
+		String nombre = "Showcase", dia = "Jueves";
+		Double valorEntrada = 100.0;
+		Integer cantidadPersonas = 10, cantidadSalas = 3, cantidadPeliculas = 3;
+		Cine cine = new Cine("ShowCase", cantidadPersonas, cantidadSalas, cantidadPeliculas);
+		Double valorEsperado = 110.0;
+		Double valorObtenido = cine.incrementarElValorDeEntrada();
+		assertEquals (valorEsperado, valorObtenido);
 	}
 
 	@Test
