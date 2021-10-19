@@ -28,13 +28,38 @@ public class CinemaTest {
 
 	@Test
 	public void elClienteVipTieneDescuento() {
-
+		Cliente cliente1 = new Cliente("Pedro", "Sánchez", 400, 51, TipoCliente.VIP, true);
+		
+		Cine cine = new Cine ("Showcase", 10, 3, 3);
+		
+	
+		Boolean valorEsperado = true;
+		
+		Boolean valorObtenido = cine.evaluarCondicionCliente(cliente1);
+	
+		
+		assertEquals(valorEsperado, valorObtenido);
 	}
+	
 
 	@Test
-	public void elClienteVipTieneDescuentoEspecialASalaMax() {
-
+	public void siElClienteEsVipTieneDiezPorCientoDto() {
+		Double valorEntrada = 100.0;
+        
+		Cliente cliente1 = new Cliente("Pedro", "Sánchez", 400, 51, TipoCliente.VIP, true);
+		
+		Cine cine = new Cine ("Showcase", 10, 3, 3);
+		
+		Double valorEsperado = 90.0;
+		
+		Double valorObtenido = cine.aplicarDto(valorEntrada, cliente1);
+		
+		assertEquals(valorEsperado, valorObtenido);
+		
+		
 	}
+	
+	
 
 	@Test
 	public void elClienteMenorDeEdadNoPuedeComprarEntradaParaPeliculaNoATP() {
