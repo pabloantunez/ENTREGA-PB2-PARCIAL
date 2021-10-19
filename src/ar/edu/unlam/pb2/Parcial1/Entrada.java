@@ -49,11 +49,11 @@ public class Entrada {
 		return sala.getTipoDeSala();
 	}
 
-	public Double getHora() {
+	public String getHora() {
 		return hora;
 	}
 
-	public void setHora(Double hora) {
+	public void setHora(String hora) {
 		this.hora = hora;
 	}
 

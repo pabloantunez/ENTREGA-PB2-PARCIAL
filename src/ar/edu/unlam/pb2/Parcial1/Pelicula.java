@@ -6,15 +6,14 @@ public class Pelicula {
 	private TipoClasificacion clasificacion;
 	private TipoGenero genero;
 	private TipoSala sala;
+	private Entrada entrada;
 
 	public Pelicula(String titulo, TipoGenero genero, TipoClasificacion clasificacion) {
 		this.titulo = titulo;
 		this.genero = genero;
 		this.clasificacion = clasificacion;
-		this.dia = null;
-		this.horario = null;
+		this.entrada = new Entrada(null, "titulo", "titulo", null, null);
 		this.sala = TipoSala.SIN_ASIGNAR;
-
 	}
 
 	public String getTitulo() {
@@ -41,22 +40,6 @@ public class Pelicula {
 		this.sala = sala;
 	}
 
-	public String getDia() {
-		return dia;
-	}
-
-	public void setDia(String dia) {
-		this.dia = dia;
-	}
-
-	public String getHorario() {
-		return horario;
-	}
-
-	public void setHorario(String horario) {
-		this.horario = horario;
-	}
-
 	public TipoClasificacion getClasificacion() {
 		return clasificacion;
 	}
@@ -65,8 +48,13 @@ public class Pelicula {
 		this.clasificacion = clasificacion;
 	}
 
-	public Boolean asignarPeliculaASala() {
-
-		return null;
+	public String getHora() {
+		return entrada.getHora();
 	}
+
+	public String getDia() {
+		return entrada.getDia();
+	}
+
+	
 }

@@ -20,6 +20,7 @@ public class SalaTest {
 		String horario = "20", dia = "miercoles";
 		Sala sala = new Sala("sala1", TipoSala.SALA_2D);
 		Pelicula pelicula = new Pelicula("Rambo", TipoGenero.ACCION, TipoClasificacion.MAYORES_16);
+		Entrada entrada = new Entrada(10.0, "18:00", "Martes", pelicula, sala);
 		Boolean valorEsperado = true;
 		Boolean valorObtenido = sala.disponibilidadDeLaSala(sala.getTipoDeSala(), horario, dia, pelicula);
 		assertEquals(valorEsperado, valorObtenido);
